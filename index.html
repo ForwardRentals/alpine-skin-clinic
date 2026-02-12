@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpine Skin Clinic | Luxurious Facials. Clinical Results. | Whistler, BC</title>
-    <meta name="description" content="Alpine Skin Clinic in Whistler, BC. Luxurious facials with clinical results. Led by Jennifer Tarbet, Licensed Esthetician with nearly two decades of experience. Book your appointment today.">
+    <title>Alpine Skin Clinic | Luxury Private Facials in Whistler, BC</title>
+    <meta name="description" content="Alpine Private by Alpine Skin Clinic. Luxury in-residence facials delivered to your hotel or chalet in Whistler. Up to 10 guests. Facials, Botox, microneedling. Book with Jennifer Tarbet.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
@@ -45,7 +44,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             transition: all 0.4s ease;
         }
 
@@ -53,12 +52,10 @@
             background: rgba(250, 247, 242, 0.97);
             backdrop-filter: blur(20px);
             box-shadow: 0 1px 20px rgba(0,0,0,0.06);
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
         }
 
-        .nav.scrolled .nav-logo img {
-            height: 60px;
-        }
+        .nav.scrolled .nav-logo img { height: 55px; }
 
         .nav-container {
             max-width: 1300px;
@@ -69,25 +66,7 @@
             align-items: center;
         }
 
-        .nav-logo {
-            font-family: var(--font-heading);
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: var(--color-forest);
-            text-decoration: none;
-            letter-spacing: 0.03em;
-        }
-
-        .nav-logo span {
-            display: block;
-            font-size: 0.55rem;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            font-family: var(--font-body);
-            font-weight: 400;
-            color: var(--color-sage);
-            margin-top: -2px;
-        }
+        .nav-logo img { height: 110px; display: block; transition: height 0.4s; }
 
         .nav-links {
             display: flex;
@@ -125,16 +104,12 @@
             background: var(--color-forest) !important;
             color: var(--color-cream) !important;
             padding: 0.7rem 1.8rem !important;
-            border-radius: 0 !important;
             letter-spacing: 0.18em !important;
             font-size: 0.68rem !important;
             transition: all 0.3s !important;
         }
 
-        .nav-cta:hover {
-            background: var(--color-sage-dark) !important;
-        }
-
+        .nav-cta:hover { background: var(--color-sage-dark) !important; }
         .nav-cta::after { display: none !important; }
 
         .mobile-toggle {
@@ -154,56 +129,64 @@
             transition: 0.3s;
         }
 
-        /* ========== HERO ========== */
+        /* ========== HERO - FULL SCREEN IMAGE ========== */
         .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
+            justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-off-white) 50%, var(--color-blush) 100%);
         }
 
-        .hero-bg-pattern {
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.04;
-            background-image:
-                radial-gradient(circle at 20% 50%, var(--color-sage) 1px, transparent 1px),
-                radial-gradient(circle at 80% 20%, var(--color-sage) 1px, transparent 1px),
-                radial-gradient(circle at 60% 80%, var(--color-sage) 1px, transparent 1px);
-            background-size: 80px 80px, 120px 120px, 100px 100px;
+            z-index: 0;
         }
 
-        .hero-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
+            color: var(--color-white);
+            max-width: 850px;
+            padding: 2rem;
         }
-
-        .hero-content { padding: 2rem 0; }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(139, 157, 131, 0.1);
-            border: 1px solid rgba(139, 157, 131, 0.25);
-            padding: 0.5rem 1.2rem;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1.4rem;
             border-radius: 30px;
             font-size: 0.68rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--color-sage-dark);
+            color: var(--color-white);
             font-weight: 500;
             margin-bottom: 2rem;
         }
@@ -212,33 +195,76 @@
 
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-size: clamp(3rem, 6vw, 5.5rem);
             font-weight: 300;
-            line-height: 1.1;
-            color: var(--color-forest);
+            line-height: 1.05;
             margin-bottom: 1.5rem;
+            text-shadow: 0 2px 40px rgba(0,0,0,0.3);
         }
 
         .hero h1 em {
             font-style: italic;
-            color: var(--color-sage);
+            color: var(--color-gold-light);
         }
 
         .hero-subtitle {
-            font-size: 1rem;
-            color: var(--color-warm-gray);
-            max-width: 480px;
-            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
             line-height: 1.8;
+            opacity: 0.85;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.3);
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn-primary {
+            display: inline-block;
+            background: var(--color-gold);
+            color: var(--color-forest);
+            padding: 1.1rem 3rem;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: 2px solid var(--color-gold);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-white);
+            border-color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--color-white);
+            padding: 1.1rem 3rem;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.4s;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.8);
+            transform: translateY(-2px);
+        }
+
+        .btn-forest {
             display: inline-block;
             background: var(--color-forest);
             color: var(--color-cream);
@@ -252,107 +278,32 @@
             border: 2px solid var(--color-forest);
         }
 
-        .btn-primary:hover {
+        .btn-forest:hover {
             background: var(--color-sage-dark);
             border-color: var(--color-sage-dark);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(44, 62, 45, 0.2);
         }
 
-        .btn-secondary {
+        .btn-gold-dark {
             display: inline-block;
-            background: transparent;
+            background: var(--color-gold);
             color: var(--color-forest);
-            padding: 1rem 2.5rem;
+            padding: 1.1rem 3rem;
             text-decoration: none;
-            font-size: 0.72rem;
-            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            font-weight: 500;
-            transition: all 0.4s;
-            border: 2px solid var(--color-sage);
-        }
-
-        .btn-secondary:hover {
-            background: var(--color-sage);
-            color: var(--color-white);
-            transform: translateY(-2px);
-        }
-
-        .hero-visual {
-            position: relative;
-            height: 600px;
-        }
-
-        .hero-image-card {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .hero-image-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 50%, var(--color-sage-dark) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: var(--color-white);
-        }
-
-        .hero-image-placeholder .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        .hero-image-placeholder p {
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            opacity: 0.7;
-        }
-
-        .hero-floating-card {
-            position: absolute;
-            bottom: 2rem;
-            left: -2rem;
-            background: var(--color-white);
-            padding: 1.5rem 2rem;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            z-index: 3;
-        }
-
-        .hero-floating-card .rating {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
             font-weight: 600;
-            color: var(--color-forest);
-            line-height: 1;
+            transition: all 0.4s;
+            border: 2px solid var(--color-gold);
         }
 
-        .hero-floating-card .rating-info {
-            font-size: 0.68rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-warm-gray);
-        }
-
-        .hero-floating-card .stars {
+        .btn-gold-dark:hover {
+            background: transparent;
             color: var(--color-gold);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196, 169, 125, 0.2);
         }
 
         /* ========== TRUST BAR ========== */
@@ -371,10 +322,7 @@
             flex-wrap: wrap;
         }
 
-        .trust-item {
-            text-align: center;
-            color: var(--color-cream);
-        }
+        .trust-item { text-align: center; color: var(--color-cream); }
 
         .trust-item .number {
             font-family: var(--font-heading);
@@ -391,10 +339,8 @@
             margin-top: 0.2rem;
         }
 
-        /* ========== SECTION STYLES ========== */
-        .section {
-            padding: 7rem 0;
-        }
+        /* ========== SECTIONS ========== */
+        .section { padding: 7rem 0; }
 
         .section-container {
             max-width: 1300px;
@@ -404,7 +350,7 @@
 
         .section-header {
             text-align: center;
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto 4rem;
         }
 
@@ -433,10 +379,158 @@
             line-height: 1.8;
         }
 
-        /* ========== ABOUT ========== */
-        .about {
-            background: var(--color-white);
+        /* ========== ALPINE PRIVATE SERVICES ========== */
+        .private-services { background: var(--color-white); }
+
+        .private-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
         }
+
+        .private-card {
+            background: var(--color-cream);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .private-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-gold);
+            transform: scaleY(0);
+            transition: transform 0.4s;
+            transform-origin: top;
+        }
+
+        .private-card:hover::before { transform: scaleY(1); }
+
+        .private-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+        }
+
+        .private-card-label {
+            display: inline-block;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            font-weight: 600;
+            background: rgba(196, 169, 125, 0.1);
+            padding: 0.3rem 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .private-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-forest);
+            margin-bottom: 0.6rem;
+        }
+
+        .private-card .meta {
+            font-size: 0.78rem;
+            color: var(--color-sage-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .private-card p {
+            color: var(--color-warm-gray);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .private-card .price {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-forest);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .private-card .price span {
+            font-size: 0.78rem;
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--color-warm-gray);
+        }
+
+        .service-link {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-sage-dark);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .service-link:hover { gap: 0.8rem; }
+
+        /* ========== PARALLAX IMAGE BREAK ========== */
+        .image-break {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-break img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-break-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 45, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-break-text {
+            text-align: center;
+            color: var(--color-white);
+            max-width: 700px;
+            padding: 2rem;
+        }
+
+        .image-break-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            line-height: 1.2;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .image-break-text p {
+            margin-top: 1rem;
+            font-size: 0.92rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        /* ========== ABOUT ========== */
+        .about { background: var(--color-cream); }
 
         .about-grid {
             display: grid;
@@ -445,32 +539,12 @@
             align-items: center;
         }
 
-        .about-image {
-            position: relative;
-        }
+        .about-image { position: relative; }
 
-        .about-image-placeholder {
+        .about-image img {
             width: 100%;
             aspect-ratio: 3/4;
-            background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-sage-light) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: var(--color-white);
-        }
-
-        .about-image-placeholder .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.6;
-        }
-
-        .about-image-placeholder p {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            opacity: 0.6;
+            object-fit: cover;
         }
 
         .about-accent {
@@ -493,10 +567,7 @@
             line-height: 1.2;
         }
 
-        .about-content h2 em {
-            font-style: italic;
-            color: var(--color-sage);
-        }
+        .about-content h2 em { font-style: italic; color: var(--color-sage); }
 
         .about-content p {
             color: var(--color-warm-gray);
@@ -513,11 +584,7 @@
             border-top: 1px solid rgba(0,0,0,0.06);
         }
 
-        .credential {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
+        .credential { display: flex; align-items: flex-start; gap: 0.75rem; }
 
         .credential-icon {
             width: 36px;
@@ -531,10 +598,7 @@
             font-size: 0.8rem;
         }
 
-        .credential-text {
-            font-size: 0.78rem;
-            line-height: 1.5;
-        }
+        .credential-text { font-size: 0.78rem; line-height: 1.5; }
 
         .credential-text strong {
             display: block;
@@ -545,14 +609,10 @@
             text-transform: uppercase;
         }
 
-        .credential-text span {
-            color: var(--color-warm-gray);
-        }
+        .credential-text span { color: var(--color-warm-gray); }
 
         /* ========== TEAM ========== */
-        .team {
-            background: var(--color-off-white);
-        }
+        .team { background: var(--color-off-white); }
 
         .team-grid {
             display: grid;
@@ -578,10 +638,7 @@
             display: block;
         }
 
-        .team-info {
-            padding: 2rem;
-            text-align: center;
-        }
+        .team-info { padding: 2rem; text-align: center; }
 
         .team-info h3 {
             font-family: var(--font-heading);
@@ -607,18 +664,27 @@
             line-height: 1.8;
         }
 
-        @media (max-width: 1024px) {
-            .team-grid { grid-template-columns: repeat(2, 1fr); }
+        /* ========== IMAGE GALLERY ========== */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
         }
 
-        @media (max-width: 768px) {
-            .team-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
         }
 
-        /* ========== SERVICES ========== */
-        .services {
-            background: var(--color-cream);
-        }
+        .gallery img:hover { transform: scale(1.03); }
+
+        .gallery-item { overflow: hidden; }
+
+        /* ========== CLINIC SERVICES ========== */
+        .clinic-services { background: var(--color-white); }
 
         .services-grid {
             display: grid;
@@ -627,7 +693,7 @@
         }
 
         .service-card {
-            background: var(--color-white);
+            background: var(--color-cream);
             padding: 2.5rem;
             transition: all 0.4s;
             position: relative;
@@ -681,159 +747,10 @@
             margin-bottom: 1.5rem;
         }
 
-        .service-link {
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-sage-dark);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s;
-        }
-
-        .service-link:hover { gap: 0.8rem; }
-
-        /* ========== EXPERIENCE ========== */
-        .experience {
-            background: var(--color-forest);
-            color: var(--color-cream);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .experience .section-label { color: var(--color-gold); }
-        .experience .section-title { color: var(--color-cream); }
-        .experience .section-subtitle { color: rgba(250, 247, 242, 0.6); }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .experience-step {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .step-number {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: var(--color-gold);
-            opacity: 0.5;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .experience-step h3 {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            font-weight: 400;
-            margin-bottom: 0.8rem;
-        }
-
-        .experience-step p {
-            font-size: 0.85rem;
-            line-height: 1.8;
-            opacity: 0.65;
-        }
-
-        /* ========== PRODUCTS ========== */
-        .products {
-            background: var(--color-off-white);
-        }
-
-        .products-flex {
-            display: flex;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .products-content { flex: 1; }
-
-        .products-content h2 {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--color-forest);
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-        }
-
-        .products-content p {
-            color: var(--color-warm-gray);
-            font-size: 0.92rem;
-            line-height: 1.9;
-            margin-bottom: 1rem;
-        }
-
-        .product-brands {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .brand-tag {
-            background: var(--color-white);
-            padding: 0.8rem 1.5rem;
-            font-size: 0.72rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-forest);
-            font-weight: 500;
-            border: 1px solid rgba(0,0,0,0.06);
-        }
-
-        .products-visual {
-            flex: 1;
-            height: 450px;
-            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-sage) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-white);
-            flex-direction: column;
-        }
-
-        .products-visual .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.6;
-        }
-
-        .products-visual p {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            opacity: 0.6;
-        }
-
         /* ========== REVIEWS ========== */
-        .reviews {
-            background: var(--color-white);
-        }
+        .reviews { background: var(--color-cream); }
 
-        .reviews-highlight {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+        .reviews-highlight { text-align: center; margin-bottom: 3rem; }
 
         .reviews-highlight .big-rating {
             font-family: var(--font-heading);
@@ -864,7 +781,7 @@
         }
 
         .review-card {
-            background: var(--color-cream);
+            background: var(--color-white);
             padding: 2.5rem;
             position: relative;
         }
@@ -913,82 +830,41 @@
             letter-spacing: 0.05em;
         }
 
-        /* ========== MOBILE FACIALS ========== */
-        .mobile-facials {
-            background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-cream) 100%);
-        }
-
-        .mobile-facials-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .mobile-facials-content h2 {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: var(--color-forest);
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-        }
-
-        .mobile-facials-content h2 em {
-            font-style: italic;
-            color: var(--color-sage);
-        }
-
-        .mobile-facials-content p {
-            color: var(--color-warm-gray);
-            font-size: 0.92rem;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .mobile-facials-visual {
-            height: 400px;
-            background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-white);
-            flex-direction: column;
-        }
-
-        .mobile-facials-visual .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .mobile-facials-visual p {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            opacity: 0.7;
-        }
-
-        /* ========== CONTACT / BOOKING CTA ========== */
+        /* ========== BOOKING CTA ========== */
         .booking-cta {
-            background: var(--color-forest);
-            padding: 6rem 0;
-            text-align: center;
-            color: var(--color-cream);
             position: relative;
+            padding: 8rem 0;
+            text-align: center;
+            color: var(--color-white);
             overflow: hidden;
         }
 
-        .booking-cta::before {
-            content: '';
+        .booking-cta-bg {
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 60px;
-            background: var(--color-gold);
-            opacity: 0.3;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .booking-cta-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .booking-cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 45, 0.75);
+        }
+
+        .booking-cta-content {
+            position: relative;
+            z-index: 2;
         }
 
         .booking-cta .section-label { color: var(--color-gold); }
@@ -1004,33 +880,12 @@
         .booking-cta p {
             max-width: 550px;
             margin: 0 auto 2.5rem;
-            opacity: 0.65;
+            opacity: 0.75;
             font-size: 0.92rem;
             line-height: 1.8;
         }
 
-        .btn-gold {
-            display: inline-block;
-            background: var(--color-gold);
-            color: var(--color-forest);
-            padding: 1.1rem 3rem;
-            text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: all 0.4s;
-            border: 2px solid var(--color-gold);
-        }
-
-        .btn-gold:hover {
-            background: transparent;
-            color: var(--color-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(196, 169, 125, 0.2);
-        }
-
-        /* ========== CONTACT INFO ========== */
+        /* ========== CONTACT ========== */
         .contact {
             background: var(--color-charcoal);
             color: var(--color-cream);
@@ -1056,10 +911,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .contact-social {
-            display: flex;
-            gap: 1rem;
-        }
+        .contact-social { display: flex; gap: 1rem; }
 
         .contact-social a {
             display: flex;
@@ -1117,6 +969,8 @@
             color: rgba(250, 247, 242, 0.3);
         }
 
+        .footer a { color: inherit; text-decoration: none; }
+
         /* ========== ANIMATIONS ========== */
         .fade-up {
             opacity: 0;
@@ -1131,16 +985,13 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
-            .hero-container { grid-template-columns: 1fr; gap: 2rem; }
-            .hero-visual { height: 400px; }
-            .hero-floating-card { left: 1rem; bottom: 1rem; }
             .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .private-services-grid { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .experience-grid { grid-template-columns: repeat(2, 1fr); }
             .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-            .mobile-facials-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .products-flex { flex-direction: column; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .gallery { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -1158,16 +1009,16 @@
                 gap: 1.5rem;
             }
             .mobile-toggle { display: flex; }
-            .hero { min-height: auto; padding: 8rem 0 4rem; }
-            .hero-visual { height: 350px; }
             .section { padding: 4rem 0; }
             .services-grid { grid-template-columns: 1fr; }
-            .experience-grid { grid-template-columns: 1fr; gap: 1rem; }
             .reviews-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
             .about-credentials { flex-direction: column; gap: 1.5rem; }
-            .hero-buttons { flex-direction: column; }
-            .btn-primary, .btn-secondary { text-align: center; }
+            .hero-buttons { flex-direction: column; align-items: center; }
             .trust-bar-container { gap: 2rem; }
+            .gallery { grid-template-columns: 1fr; }
+            .gallery img { height: 250px; }
+            .image-break { height: 40vh; }
         }
     </style>
 </head>
@@ -1177,53 +1028,41 @@
     <nav class="nav" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="https://www.alpineskinclinic.com/uploads/b/1bdf1165260c5e9ab0c8a064ad1a6f3ca4293f28c5cac43d51669f3c68bf0733/6.8.2024_6663b58869da38.86948698.png" alt="Alpine Skin Clinic" style="height: 110px; display: block;">
+                <img src="https://www.alpineskinclinic.com/uploads/b/1bdf1165260c5e9ab0c8a064ad1a6f3ca4293f28c5cac43d51669f3c68bf0733/6.8.2024_6663b58869da38.86948698.png" alt="Alpine Skin Clinic">
             </a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
+                <li><a href="#private">Alpine Private</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#treatments">Treatments</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://alpineskinclinic.janeapp.com/" class="nav-cta" target="_blank" rel="noopener">Book Now</a></li>
+                <li><a href="https://alpineskinclinic.janeapp.com/locations/alpine-private/book#staff_member/1" class="nav-cta" target="_blank" rel="noopener">Book Private</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO - FULL SCREEN ALPINE IMAGE -->
     <section class="hero">
-        <div class="hero-bg-pattern"></div>
-        <div class="hero-container">
-            <div class="hero-content fade-up">
-                <div class="hero-badge">
-                    <span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    81 Five-Star Reviews
-                </div>
-                <h1>Luxurious Facials.<br><em>Clinical Results.</em></h1>
-                <p class="hero-subtitle">
-                    Nestled in the heart of Whistler's Function Junction, Alpine Skin Clinic delivers a holistic, tailored approach to skincare with nearly two decades of expertise. By appointment only, because your skin deserves undivided attention.
-                </p>
-                <div class="hero-buttons">
-                    <a href="https://alpineskinclinic.janeapp.com/" class="btn-primary" target="_blank" rel="noopener">Book Your Appointment</a>
-                    <a href="#services" class="btn-secondary">Explore Services</a>
-                </div>
+        <div class="hero-bg">
+            <img src="images/turquoise-lake.jpg" alt="Alpine landscape - Whistler BC">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-up">
+            <div class="hero-badge">
+                <span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                81 Five-Star Google Reviews
             </div>
-            <div class="hero-visual fade-up">
-                <div class="hero-image-card">
-                    <img src="https://www.alpineskinclinic.com/uploads/b/1bdf1165260c5e9ab0c8a064ad1a6f3ca4293f28c5cac43d51669f3c68bf0733/2025-03-07_12-01-29_1741377702.jpg" alt="Alpine Skin Clinic - Luxurious Facials in Whistler" loading="eager">
-                </div>
-                <div class="hero-floating-card">
-                    <div>
-                        <div class="rating">5.0</div>
-                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    </div>
-                    <div class="rating-info">
-                        81 Reviews on<br>Google My Business
-                    </div>
-                </div>
+            <h1>Alpine Private<br><em>Luxury In-Residence Facials</em></h1>
+            <p class="hero-subtitle">
+                A bespoke facial experience delivered to your hotel, chalet, or private residence in Whistler. Facials, Botox, microneedling &mdash; for up to 10 guests. Your mountain escape, elevated.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://alpineskinclinic.janeapp.com/locations/alpine-private/book#staff_member/1" class="btn-primary" target="_blank" rel="noopener">Book Alpine Private</a>
+                <a href="#private" class="btn-secondary">View Experiences</a>
             </div>
         </div>
     </section>
@@ -1240,12 +1079,70 @@
                 <span class="label">Five-Star Reviews</span>
             </div>
             <div class="trust-item">
-                <span class="number">Est. 2012</span>
-                <span class="label">Serving Whistler</span>
+                <span class="number">Up to 10</span>
+                <span class="label">Guests Per Booking</span>
             </div>
             <div class="trust-item">
                 <span class="number">100%</span>
                 <span class="label">Personalized Care</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALPINE PRIVATE SERVICES -->
+    <section class="private-services section" id="private">
+        <div class="section-container">
+            <div class="section-header fade-up">
+                <span class="section-label">Alpine Private Experiences</span>
+                <h2 class="section-title">Luxury Brought to You</h2>
+                <p class="section-subtitle">
+                    We come to you. Whether it's a couples retreat, a ski weekend celebration, or a private pampering session at your chalet, Jennifer and her team deliver clinical-grade facials in the comfort of your Whistler accommodation.
+                </p>
+            </div>
+            <div class="private-services-grid">
+                <div class="private-card fade-up">
+                    <span class="private-card-label">Most Popular</span>
+                    <h3>The Alpine Private Experience</h3>
+                    <div class="meta">1&ndash;4 Guests &bull; 2-Hour Treatment &bull; 4 Hours Scheduled</div>
+                    <p>A luxury in-residence facial experience delivered to your hotel or chalet in Whistler. Suited for indulgent treatments, couples, celebrations, and recovery. Fully customized to each guest's skin needs.</p>
+                    <div class="price">$250<span>/hour + tax + 15% gratuity</span></div>
+                    <a href="https://alpineskinclinic.janeapp.com/locations/alpine-private/book#staff_member/1" class="service-link" target="_blank" rel="noopener">Book Now &rarr;</a>
+                </div>
+                <div class="private-card fade-up">
+                    <span class="private-card-label">Group Experience</span>
+                    <h3>Chalet Glow &mdash; Facials &amp; Massage</h3>
+                    <div class="meta">Up to 10 Guests &bull; Full Day &bull; 8 Hours</div>
+                    <p>A luxury in-chalet facial experience for up to 10 guests, tailored for ski weekends, celebrations, and group retreats. Customized timing and treatments per guest. The ultimate group pampering experience.</p>
+                    <div class="price">Custom Quote <span>for your group</span></div>
+                    <a href="https://alpineskinclinic.janeapp.com/locations/alpine-private/book#staff_member/1" class="service-link" target="_blank" rel="noopener">Book Now &rarr;</a>
+                </div>
+                <div class="private-card fade-up">
+                    <span class="private-card-label">Premium Experience</span>
+                    <h3>Chalet Glow &mdash; Facials, Botox &amp; Microneedling</h3>
+                    <div class="meta">Group Booking &bull; Full Day &bull; 8 Hours</div>
+                    <p>The complete in-chalet experience combining facials, injectables, and advanced treatments. Bring the full Alpine Skin Clinic to your group with Dr. Amy for Botox and Jennifer for facials and microneedling.</p>
+                    <div class="price">Call to Book <span>&bull; (604) 962-6222</span></div>
+                    <a href="tel:6049626222" class="service-link">Contact Us &rarr;</a>
+                </div>
+                <div class="private-card fade-up">
+                    <span class="private-card-label">Advanced Treatment</span>
+                    <h3>Medical Microneedling In-Suite</h3>
+                    <div class="meta">1-on-1 &bull; 1-Hour Treatment &bull; 2 Hours Scheduled</div>
+                    <p>Medical-grade microneedling delivered privately in-suite. Collagen induction therapy targeting fine lines, acne scars, and skin texture improvement. All the power of the clinic, brought to you.</p>
+                    <div class="price">$450</div>
+                    <a href="https://alpineskinclinic.janeapp.com/locations/alpine-private/book#staff_member/1" class="service-link" target="_blank" rel="noopener">Book Now &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE BREAK - FOREST -->
+    <div class="image-break">
+        <img src="images/forest-sunrays.jpg" alt="Sunlight through ancient forest - Whistler BC">
+        <div class="image-break-overlay">
+            <div class="image-break-text">
+                <h2>Where Wilderness Meets Wellness</h2>
+                <p>Inspired by the pristine alpine environment of Whistler, our treatments blend the restorative power of nature with clinical precision.</p>
             </div>
         </div>
     </div>
@@ -1255,7 +1152,7 @@
         <div class="section-container">
             <div class="about-grid">
                 <div class="about-image fade-up">
-                    <img src="https://www.alpineskinclinic.com/uploads/b/1bdf1165260c5e9ab0c8a064ad1a6f3ca4293f28c5cac43d51669f3c68bf0733/2025-03-08_13-17-12_1741468659.jpg" alt="Jennifer Tarbet - Licensed Esthetician" style="width: 100%; aspect-ratio: 3/4; object-fit: cover;" loading="lazy">
+                    <img src="https://www.alpineskinclinic.com/uploads/b/1bdf1165260c5e9ab0c8a064ad1a6f3ca4293f28c5cac43d51669f3c68bf0733/2025-03-08_13-17-12_1741468659.jpg" alt="Jennifer Tarbet - Licensed Esthetician" loading="lazy">
                     <div class="about-accent"></div>
                 </div>
                 <div class="about-content fade-up">
@@ -1265,7 +1162,7 @@
                         With nearly two decades perfecting her craft since 2001, Jennifer brings an unmatched depth of knowledge and intuition to every treatment. As a licensed esthetician and certified body worker, she combines advanced clinical techniques with a holistic, nurturing approach that treats the whole person, not just the skin.
                     </p>
                     <p>
-                        At Alpine Skin Clinic, every appointment is one-on-one with Jennifer. This by-appointment-only model ensures your skin receives the individualized attention and expert analysis it deserves. Her commitment to continuous education in the latest esthetic modalities means you always receive cutting-edge care grounded in proven science.
+                        Whether she's treating you at the clinic in Function Junction or bringing the Alpine Private experience to your chalet, every session with Jennifer is meticulously crafted to restore balance and enhance your wellbeing.
                     </p>
                     <div class="about-credentials">
                         <div class="credential">
@@ -1311,7 +1208,7 @@
                     <div class="team-info">
                         <h3>Jen</h3>
                         <span class="team-title">Licensed Esthetician &amp; Clinic Owner</span>
-                        <p>A licensed esthetician and certified body worker perfecting her craft for almost two decades. Jen brings a wealth of experience and a passion for wellness, specializing in personalized sessions designed to restore balance and enhance wellbeing.</p>
+                        <p>A licensed esthetician and certified body worker perfecting her craft for almost two decades. Specializing in personalized sessions designed to restore balance and enhance wellbeing.</p>
                     </div>
                 </div>
                 <div class="team-card fade-up">
@@ -1319,7 +1216,7 @@
                     <div class="team-info">
                         <h3>Dr. Amy Rolfsen</h3>
                         <span class="team-title">Aesthetic Medicine &amp; Medical Injector</span>
-                        <p>Dr. Rolfsen takes a minimalist, personalized approach to treatments, starting conservatively and adjusting gradually. She prioritizes understanding each client's unique features and goals while accentuating natural beauty with Botox, Nuceiva, and Dysport.</p>
+                        <p>A minimalist, personalized approach to injectables. Dr. Rolfsen starts conservatively and adjusts gradually, accentuating natural beauty with Botox, Nuceiva, and Dysport.</p>
                     </div>
                 </div>
                 <div class="team-card fade-up">
@@ -1327,21 +1224,29 @@
                     <div class="team-info">
                         <h3>Colleen</h3>
                         <span class="team-title">Wedding Makeup &amp; Hair Artist</span>
-                        <p>A Blanche MacDonald graduate and full IATSE union member with extensive TV, film, and commercial work. Former MAC Special Events Team artist, Colleen's signature "you-just-enhanced" approach ensures you feel like the best version of yourself.</p>
+                        <p>Blanche MacDonald graduate, IATSE union member, and former MAC Special Events artist. Her signature "you-just-enhanced" approach ensures you feel like the best version of yourself.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="services section" id="services">
+    <!-- ALPINE GALLERY -->
+    <div class="gallery">
+        <div class="gallery-item"><img src="images/snowy-mountain-stars.jpg" alt="Snow-covered mountains under starry sky" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/forest-trail.jpg" alt="Lush forest trail in Whistler" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/aerial-river.jpg" alt="Aerial view of glacial river" loading="lazy"></div>
+        <div class="gallery-item"><img src="images/mountain-peak-clouds.jpg" alt="Mountain peak through clouds" loading="lazy"></div>
+    </div>
+
+    <!-- CLINIC SERVICES -->
+    <section class="clinic-services section" id="treatments">
         <div class="section-container">
             <div class="section-header fade-up">
-                <span class="section-label">Skin & Wellness Menu</span>
-                <h2 class="section-title">Treatments Tailored to You</h2>
+                <span class="section-label">Luxurious Facials. Clinical Results.</span>
+                <h2 class="section-title">In-Clinic Treatments</h2>
                 <p class="section-subtitle">
-                    Clinical facials where results meet relaxation. Advanced techniques, specialized training, and years of hands-on experience come together for transformative skin care.
+                    Visit us at our by-appointment-only clinic in Function Junction. Clinical facials where results meet relaxation, combining advanced techniques with years of hands-on experience.
                 </p>
             </div>
             <div class="services-grid">
@@ -1360,7 +1265,7 @@
                 <div class="service-card fade-up">
                     <div class="service-icon">&#10022;</div>
                     <h3>Dermaplaning</h3>
-                    <p>Gentle exfoliation that removes dead skin cells and fine vellus hair, revealing a smoother, brighter complexion and enhancing product absorption.</p>
+                    <p>Gentle exfoliation removing dead skin cells and fine vellus hair, revealing a smoother, brighter complexion and enhancing product absorption.</p>
                     <a href="https://alpineskinclinic.janeapp.com/" class="service-link" target="_blank" rel="noopener">Book Now &rarr;</a>
                 </div>
                 <div class="service-card fade-up">
@@ -1385,60 +1290,12 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="experience section">
-        <div class="section-container">
-            <div class="section-header fade-up">
-                <span class="section-label">Your Journey</span>
-                <h2 class="section-title">The Alpine Experience</h2>
-                <p class="section-subtitle">
-                    From the moment you step in, every detail is designed for your comfort, results, and complete rejuvenation.
-                </p>
-            </div>
-            <div class="experience-grid">
-                <div class="experience-step fade-up">
-                    <div class="step-number">01</div>
-                    <h3>Consultation</h3>
-                    <p>Your journey begins with an in-depth skin analysis. Jennifer takes the time to understand your skin history, concerns, and goals before recommending a tailored treatment plan.</p>
-                </div>
-                <div class="experience-step fade-up">
-                    <div class="step-number">02</div>
-                    <h3>Treatment</h3>
-                    <p>Using medical-grade products and advanced techniques, your customized facial treatment addresses your specific skin needs while providing deep relaxation.</p>
-                </div>
-                <div class="experience-step fade-up">
-                    <div class="step-number">03</div>
-                    <h3>Aftercare</h3>
-                    <p>Leave with a personalized home care plan and product recommendations. Ongoing expert skin coaching ensures your results continue long after your visit.</p>
-                </div>
-            </div>
+    <!-- IMAGE BREAK - MOUNTAINS -->
+    <div class="image-break">
+        <img src="images/sunrise-silhouette.png" alt="Sunrise silhouette in the mountains">
+        <div class="image-break-overlay" style="background: rgba(0,0,0,0.25);">
         </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section class="products section">
-        <div class="section-container">
-            <div class="products-flex">
-                <div class="products-content fade-up">
-                    <span class="section-label">Medical-Grade Skincare</span>
-                    <h2>Only the Best for<br>Your Skin</h2>
-                    <p>
-                        Alpine Skin Clinic partners with leading medical-grade skincare brands to deliver clinical results you can see and feel. Every product used in treatments and recommended for home care is carefully selected for efficacy, safety, and results.
-                    </p>
-                    <p>
-                        Osmosis vitamin A serums encourage the skin to calm inflammation, restore the protective barrier, increase nutrients and immune repair, rebuild the dermis, normalize oil production, hydrate, firm, and protect from UV rays.
-                    </p>
-                    <div class="product-brands">
-                        <div class="brand-tag">AlumierMD</div>
-                        <div class="brand-tag">Osmosis MD</div>
-                    </div>
-                </div>
-                <div class="products-visual" style="background: none; overflow: hidden;">
-                    <img src="https://www.alpineskinclinic.com/uploads/b/137df0326e7c0f28a65cff3aff1346b2ee5c7f19abb3ad90ffb66c6f750d670c/Med-Spa_Texture11_1701662401.jpg" alt="Medical-Grade Skincare Products" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- REVIEWS -->
     <section class="reviews section" id="reviews">
@@ -1481,37 +1338,22 @@
         </div>
     </section>
 
-    <!-- ALPINE PRIVATE - MOBILE FACIALS -->
-    <section class="mobile-facials section">
-        <div class="section-container">
-            <div class="mobile-facials-grid">
-                <div class="mobile-facials-content fade-up">
-                    <span class="section-label">Alpine Private</span>
-                    <h2>Luxury Mobile Facials<br><em>In Whistler</em></h2>
-                    <p>
-                        Can't make it to Function Junction? Alpine Private brings the full clinical facial experience directly to you. Enjoy the same expert care, medical-grade products, and transformative results in the comfort of your Whistler accommodation.
-                    </p>
-                    <p>
-                        Perfect for bridal parties, special occasions, or simply treating yourself to an elevated at-home spa experience.
-                    </p>
-                    <a href="https://alpineskinclinic.janeapp.com/" class="btn-primary" target="_blank" rel="noopener">Book Mobile Facial</a>
-                </div>
-                <div class="mobile-facials-visual fade-up" style="background: none; overflow: hidden;">
-                    <img src="https://www.alpineskinclinic.com/uploads/b/137df0326e7c0f28a65cff3aff1346b2ee5c7f19abb3ad90ffb66c6f750d670c/2023-12-03_23-00-07_1701662417.jpg" alt="Alpine Private - Luxury Mobile Facials in Whistler" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- BOOKING CTA -->
     <section class="booking-cta">
-        <div class="section-container fade-up">
-            <span class="section-label">Ready for Radiant Skin?</span>
-            <h2>Your Best Skin<br>Starts Here</h2>
+        <div class="booking-cta-bg">
+            <img src="images/golden-mountain-sunset.jpg" alt="Golden mountain sunset">
+        </div>
+        <div class="booking-cta-overlay"></div>
+        <div class="section-container booking-cta-content fade-up">
+            <span class="section-label">Ready for the Alpine Experience?</span>
+            <h2>Bring the Clinic<br>to Your Chalet</h2>
             <p>
-                Book your appointment with Jennifer and experience the Alpine difference. Personalized, clinical-grade skincare in the heart of Whistler.
+                Book Alpine Private and experience luxury facials, Botox, and microneedling delivered to your door in Whistler. Up to 10 guests. Your mountain escape, elevated.
             </p>
-            <a href="https://alpineskinclinic.janeapp.com/" class="btn-gold" target="_blank" rel="noopener">Book Your Appointment</a>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://alpineskinclinic.janeapp.com/locations/alpine-private/book#staff_member/1" class="btn-primary" target="_blank" rel="noopener">Book Alpine Private</a>
+                <a href="https://alpineskinclinic.janeapp.com/" class="btn-secondary" target="_blank" rel="noopener">Book In-Clinic</a>
+            </div>
         </div>
     </section>
 
@@ -1521,7 +1363,7 @@
             <div class="contact-grid">
                 <div class="contact-brand fade-up">
                     <h3>Alpine Skin Clinic</h3>
-                    <p>Luxurious facials with clinical results. Nestled in Whistler's Function Junction, serving clients with personalized, expert skincare since 2012.</p>
+                    <p>Luxury private facials and clinical skincare in Whistler, BC. Alpine Private brings the experience to your door. In-clinic appointments available at Function Junction.</p>
                     <div class="contact-social">
                         <a href="https://www.instagram.com/alpine_skin_clinic/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
                         <a href="https://www.alpineskinclinic.com/" target="_blank" rel="noopener" aria-label="Website">WEB</a>
@@ -1554,47 +1396,35 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2026 Alpine Skin Clinic. All rights reserved. | <a href="https://www.alpineskinclinic.com/" style="color: inherit; text-decoration: none;">www.alpineskinclinic.com</a></p>
+        <p>&copy; 2026 Alpine Skin Clinic. All rights reserved. | <a href="https://www.alpineskinclinic.com/">www.alpineskinclinic.com</a></p>
     </footer>
 
     <script>
-        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Mobile menu toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu on link click
+        mobileToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => navLinks.classList.remove('active'));
         });
 
-        // Intersection Observer for fade-up animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
